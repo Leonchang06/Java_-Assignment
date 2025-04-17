@@ -44,7 +44,7 @@ public class Movie {
                         ID.add(MovieID);
                         bool = false;
                     } else {
-                        System.out.print("Your Movie ID is wrong format\n");
+                        System.out.print("Your Movie ID is wrong format (format: M000)\n");
                         bool = true;
                     }
                 } while (bool);
