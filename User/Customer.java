@@ -1,19 +1,20 @@
+import java.util.Scanner;
+
+
 public class Customer extends User {
+    Scanner cin = new Scanner(System.in);
     private static int nextCustID=1001;
     private int customerID;
     private String phoneNo;
-    private String paymentMethod;
 
     public Customer() {
         this.customerID=nextCustID++;
     }
 
-    public Customer(String name, char gender, int age, String password, String email, String phoneNo,
-            String paymentMethod) {
+    public Customer(String name, char gender, int age, String password, String email, String phoneNo) {
         super(name, gender, age, password, email);
         this.customerID = nextCustID++;
         this.phoneNo = phoneNo;
-        this.paymentMethod = paymentMethod;
     }
 
     public int getCustomerID() {
@@ -28,11 +29,4 @@ public class Customer extends User {
         this.phoneNo = phoneNo;
     }
 
-    public String getPaymentMethod() {
-        return paymentMethod;
-    }
-
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
 }

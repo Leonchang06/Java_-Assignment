@@ -1,4 +1,9 @@
+import java.util.Scanner;
+
 public class User {
+    Customer c = new Customer();
+    Scanner cin = new Scanner(System.in);
+    int selection;
     private String name;
     private char gender;
     private int age;
@@ -56,8 +61,44 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+    public void createCustAcc(){
+        System.out.println("=====Create Account=====");
+        System.out.println("CustomerID = "+c.getCustomerID());
+        System.out.print("Name: ");
+        String name
+    }
+    public void displayUserMenu() {
+
+        do {
+            displayMenu();
+            while (cin.hasNextInt()) {
+                System.out.println("invalid selection please enter number 1-2\n");
+                cin.next();
+                displayMenu();
+            }
+            selection = cin.nextInt();
+            cin.nextLine();
+
+            switch (selection) {
+                case 1:
+
+                    break;
+                case 2:
+                    break;
+                default:
+                    System.out.println("invalid selection please enter number 1-2\n");
+            }
+
+        } while (selection < 1 && selection > 2);
+    }
 
     public String toString() {
-        return String.format("Name: %-8s Gender: %-8c Age: %-8d Email: %-8s",name,gender,age,email);
+        return String.format("Name: %-8s Gender: %-8c Age: %-8d Email: %-8s", name, gender, age, email);
+    }
+
+    private void displayMenu() {
+        System.out.println("\n=====Choose Your Login Type=====");
+        System.out.println("1. Customer\n2. Staff");
+        System.out.print("Selection: ");
     }
 }
