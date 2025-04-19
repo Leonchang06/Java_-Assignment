@@ -29,4 +29,11 @@ public class Customer extends User {
         this.phoneNo = phoneNo;
     }
 
+    public void createCustAcc(){
+        System.out.println("=====Create Account=====");
+        System.out.println("CustomerID = "+getCustomerID());
+        System.out.print("Name: ");
+  
+    }
+
 }

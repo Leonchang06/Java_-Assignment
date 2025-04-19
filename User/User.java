@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class User {
-    Customer c = new Customer();
+
     Scanner cin = new Scanner(System.in);
     int selection;
     private String name;
@@ -61,18 +61,13 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-    public void createCustAcc(){
-        System.out.println("=====Create Account=====");
-        System.out.println("CustomerID = "+c.getCustomerID());
-        System.out.print("Name: ");
-        String name
-    }
+    
     public void displayUserMenu() {
 
         do {
             displayMenu();
-            while (cin.hasNextInt()) {
-                System.out.println("invalid selection please enter number 1-2\n");
+            while (!cin.hasNextInt()) {
+                System.out.println("invalid selection please enter number 1-2");
                 cin.next();
                 displayMenu();
             }
@@ -81,15 +76,15 @@ public class User {
 
             switch (selection) {
                 case 1:
-
+                System.out.println("1");
                     break;
                 case 2:
+                System.out.println("2");
                     break;
                 default:
-                    System.out.println("invalid selection please enter number 1-2\n");
+                    System.out.println("invalid selection please enter number 1-2");
             }
-
-        } while (selection < 1 && selection > 2);
+        } while (selection < 1 || selection > 2);
     }
 
     public String toString() {
